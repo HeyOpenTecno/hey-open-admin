@@ -1,4 +1,5 @@
 @import 'colors.scss';
+@import 'screen-sizes';
 
 .login-container {
   background-image: url('../../../assets/login-bg.jpg');
@@ -53,6 +54,10 @@
         margin-top: 30px;
         padding: 0 3rem;
       }
+    }
+    @media screen and (min-width: $tablet) {
+      width: 40%;
+      margin: 0 auto;
     }
   }
 }

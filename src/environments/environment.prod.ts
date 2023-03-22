@@ -1,4 +1,4 @@
-export const SERVER_URL =  'https://hey-open-backend.herokuapp.com/api/v1/'
+export const SERVER_URL =  'https://hey-open-backend.herokuapp.com/api/v1'
 export const environment = {
   production: true,
   LOGIN_URL: `${SERVER_URL}/users/login`,
