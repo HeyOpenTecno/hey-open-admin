@@ -1,0 +1,34 @@
+<div class="categories-container">
+  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+    <ul>
+      <li><a routerLink="/">Dashboard</a></li>
+      <li class="is-active"><a  routerLink="/dashboard/categories" aria-current="page">Categorías</a></li>
+    </ul>
+  </nav>
+  <div class="categories-data-container">
+    <div class="adding-data">
+      <button
+        class="button is-link is-light"
+        (click)="showCategoryModal = !showCategoryModal"
+      >
+        Añadir nueva categoría
+      </button>
+    </div>
+    <gridjs-angular
+      [config]="categoriesTableConfig"
+    >
+    </gridjs-angular>
+  </div>
+</div>
+
+<app-categories-modal
+  *ngIf="showCategoryModal"
+  (handleCloseModal)="newCategoryAdded()"
+>
+</app-categories-modal>
+<app-edit-category-modal
+  [category]="currentCategory"
+  *ngIf="showEditCategoryModal"
+  (handleCloseModal)="updatedCategory()"
+>
+</app-edit-category-modal>

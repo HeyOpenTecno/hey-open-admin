@@ -1,0 +1,15 @@
+@import 'screen-sizes';
+
+.dashboard-container {
+  background-color: #e7ebee;
+  height: 100vh;
+  padding: 18px 14px;
+  @media screen and (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: 0;
+    .dashboard-data {
+      padding: 18px 20px;
+    }
+  }
+}

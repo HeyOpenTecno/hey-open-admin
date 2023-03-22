@@ -1,0 +1,53 @@
+<div class="modal is-active">
+  <div class="modal-background" (click)="closeCategoryModal()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">{{ product?.name }}</p>
+      <button class="delete" aria-label="close" (click)="closeCategoryModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <figure class="image is-96x96">
+        <img class="is-rounded" [src]="product?.image">
+      </figure>
+      <ul class="list-group py-2 w-100">
+        <ul class="list-group list-group-unbordered  py-2 w-100">
+          <li class="list-group-item">
+            <b>Nombre del producto</b><span>{{product?.name}}</span>
+          </li>
+          <li class="list-group-item">
+            <b>Fecha de publicación</b><span>{{product?.dateCreated | date: 'dd/MM/YYYY'}}</span>
+          </li>
+          <li class="list-group-item">
+            <b>Numero de reseñas</b><span>{{product?.numReviews}}</span>
+          </li>
+          <li class="list-group-item">
+            <b>Precio del producto</b><span>{{product?.price | currency: 'MXN'}}</span>
+          </li>
+          <li class="list-group-item">
+            <b>¿Es destadao?</b><span>{{product?.isFeatured ? 'Si':'No'}}</span>
+          </li>
+          <li class="list-group-item">
+            <b>Calificación</b><span>{{product?.rate}} / 5</span>
+          </li>
+          <li class="list-group-item">
+            <b>Marca</b><span>{{product?.brand}}</span>
+          </li>
+          <li class="list-group-item">
+            <b>Categoría</b><span>{{product?.category?.name}}</span>
+          </li>
+        </ul>
+      </ul>
+      <article class="message">
+        <div class="message-header">
+          <p>Descripción Larga</p>
+        </div>
+        <div class="message-body">
+          {{product?.richDescription}}
+        </div>
+      </article>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-black" (click)="closeCategoryModal()">Cerrar</button>
+    </footer>
+  </div>
+</div>

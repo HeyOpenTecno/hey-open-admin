@@ -1,0 +1,31 @@
+<div class="modal is-active">
+  <div class="modal-background" (click)="closeCategoryModal()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Añadir Nueva Categoría</p>
+      <button class="delete" aria-label="close" (click)="closeCategoryModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <form [formGroup]="categoryForm" class="category-form">
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label">Nombre de la categoría</label>
+              <p class="control is-expanded">
+                <input class="input" type="text" placeholder="Tennis" formControlName="name">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Color identificador de la categoría</label>
+              <input [(colorPicker)]="color" [style.background]="color" class="color-picker" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-black" (click)="submitCategoryForm()">Crear categoría</button>
+      <button class="button is-warning is-light" (click)="closeCategoryModal()">Cancelar</button>
+    </footer>
+  </div>
+</div>

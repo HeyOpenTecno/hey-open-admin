@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  //font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
+  //font-family: 'Quicksand', sans-serif;
+}
+
+.button {
+  border-radius: 10px !important;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.input {
+  border-radius: 5px !important;
+}
+
+.options-row {
+  display: flex;
+}
+
+
+.color-identifier {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+}

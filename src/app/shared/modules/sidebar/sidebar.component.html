@@ -1,0 +1,72 @@
+<div class="overlay" [class.show-overlay]="isShowSidebarOverlay === true"></div>
+<div class="sidebar-container-mobile" [class.show]="isShowSidebarOverlay === true">
+  <div class="sidebar-menu-mobile" [class.show-side-menu]="isShowSidebarOverlay === true">
+    <div class="sidebar-header">
+      <div class="logo">
+        <img src="assets/logo.png" alt="">
+      </div>
+      <span class="material-symbols-outlined" (click)="toggleSidebarMobile()">
+        close
+      </span>
+    </div>
+    <nav class="sidebar-mobile-nav">
+      <ul class="mobile-menu">
+        <li class="mobile-menu-item" *ngFor="let item of navbarData" (click)="toggleSidebarMobile()">
+          <a class="mobile-menu-link" [routerLink]="item.routerLink">
+            <span class="material-symbols-outlined">
+              {{ item.icon }}
+            </span>
+            <p class="mobile-menu-label">
+              {{ item.label }}
+            </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="logout-button">
+      <li class="mobile-menu-item">
+        <a class="mobile-menu-link">
+          <span class="material-symbols-outlined">
+            logout
+          </span>
+          <p class="mobile-menu-label">
+            Cerrar Sesión
+          </p>
+        </a>
+      </li>
+    </div>
+  </div>
+</div>
+<div class="sidebar-desktop">
+  <div class="sidebar-header">
+    <div class="logo">
+      <img src="assets/logo.png" alt="">
+    </div>
+  </div>
+  <nav class="sidebar-mobile-nav">
+    <ul class="mobile-menu">
+      <li class="mobile-menu-item" *ngFor="let item of navbarData" (click)="toggleSidebarMobile()">
+        <a class="mobile-menu-link" [routerLink]="item.routerLink">
+          <span class="material-symbols-outlined">
+            {{ item.icon }}
+          </span>
+          <p class="mobile-menu-label">
+            {{ item.label }}
+          </p>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="logout-button">
+    <li class="mobile-menu-item">
+      <a class="mobile-menu-link">
+        <span class="material-symbols-outlined">
+          logout
+        </span>
+        <p class="mobile-menu-label">
+          Cerrar Sesión
+        </p>
+      </a>
+    </li>
+  </div>
+</div>

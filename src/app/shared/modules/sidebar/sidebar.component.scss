@@ -1,0 +1,193 @@
+@import 'colors.scss';
+@import 'screen-sizes';
+
+.overlay {
+  position: fixed;
+  left: 0% !important;
+  top: 0% !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: none !important;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  z-index: 99;
+}
+
+.show-overlay  {
+  display: block !important;
+}
+
+.sidebar-container-mobile {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: all .5s ease;
+  background-color: transparent;
+  .sidebar-menu-mobile {
+    background-color: $white-neutal !important;
+    position: absolute;
+    left: -100%;
+    transition: .4s !important;
+    width: 60%;
+    height: 100vh;
+    overflow: auto !important;
+    padding-bottom: 16px;
+    z-index: 30 !important;
+    padding: 30px 23px;
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+        display: flex;
+        align-items: center;
+        img {
+          max-width: 85%;
+        }
+      }
+    }
+    @media screen and (min-width: $tablet) {
+      width: 40%;
+    }
+    .sidebar-mobile-nav {
+      margin-top: 40px;
+      .mobile-menu {
+        list-style: none;
+        .mobile-menu-item {
+          margin-bottom: 1.5rem;
+          width: 100%;
+          .mobile-menu-link {
+            display: flex;
+            align-items: center;
+            color: $gray;
+            span {
+              font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 48
+            }
+            .mobile-menu-label {
+              margin-left: .5rem;
+            }
+          }
+        }
+      }
+    }
+    .logout-button {
+      position: absolute;
+      bottom: 0;
+      .mobile-menu-item {
+        margin-bottom: 1.5rem;
+        width: 100%;
+        list-style: none;
+        .mobile-menu-link {
+          display: flex;
+          align-items: center;
+          color: $gray;
+          span {
+            font-variation-settings:
+              'FILL' 0,
+              'wght' 300,
+              'GRAD' 0,
+              'opsz' 48
+          }
+          .mobile-menu-label {
+            margin-left: .5rem;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.show {
+  left: 0 !important;
+}
+.show-side-menu {
+  left: 0 !important;
+}
+
+.sidebar-desktop {
+  display: none;
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $white-neutal !important;
+    height: 100%;
+    padding: 2rem 1rem;
+    .sidebar-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .sidebar-mobile-nav {
+      width: 100%;
+      margin-top: 40px;
+      .mobile-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .mobile-menu-item {
+          margin-bottom: .5rem;
+          width: 100%;
+          padding: 1rem 2rem;
+          transition: all .3s ease;
+          cursor: pointer;
+          &:hover {
+            border-radius: 5px;
+            background-color: $gray;
+            .mobile-menu-link {
+              color: $white-neutal;
+            }
+          }
+          .mobile-menu-link {
+            display: flex;
+            color: $gray;
+            span {
+              font-variation-settings:
+                'FILL' 0,
+                'wght' 300,
+                'GRAD' 0,
+                'opsz' 48
+            }
+            p {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+    .logout-button {
+      position: absolute;
+      bottom: 0;
+      left: 3rem;
+      .mobile-menu-item {
+        margin-bottom: 1.5rem;
+        width: 100%;
+        list-style: none;
+        .mobile-menu-link {
+          display: flex;
+          align-items: center;
+          color: $gray;
+          span {
+            font-variation-settings:
+              'FILL' 0,
+              'wght' 300,
+              'GRAD' 0,
+              'opsz' 48
+          }
+          .mobile-menu-label {
+            margin-left: .5rem;
+          }
+        }
+      }
+    }
+  }
+}

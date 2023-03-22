@@ -1,0 +1,33 @@
+<div class="products-container">
+  <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+    <ul>
+      <li><a routerLink="/">Dashboard</a></li>
+      <li class="is-active"><a  routerLink="/dashboard/products" aria-current="page">Productos</a></li>
+    </ul>
+  </nav>
+  <div class="products-data-container">
+    <div class="adding-data">
+      <button
+        class="button is-link is-light"
+        (click)="showNewProductModal = !showNewProductModal"
+      >
+        Añadir nueva categoría
+      </button>
+    </div>
+    <gridjs-angular
+      [config]="productsTableConfig"
+    >
+    </gridjs-angular>
+  </div>
+</div>
+<app-product-details
+  [productId]="currentproduct"
+  (handleCloseModal)="showProductModal = !showProductModal"
+  *ngIf="showProductModal"
+>
+</app-product-details>
+<app-new-product-modal
+ (handleCloseModal)="newProductAdded()"
+  *ngIf="showNewProductModal"
+>
+</app-new-product-modal>

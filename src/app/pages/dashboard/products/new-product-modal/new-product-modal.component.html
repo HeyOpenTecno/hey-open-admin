@@ -1,0 +1,130 @@
+<div class="modal is-active">
+  <div class="modal-background" (click)="closeProductModal()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Registrar Producto</p>
+      <button class="delete" aria-label="close" (click)="closeProductModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <form [formGroup]="productForm" class="category-form" enctype="multipart/form-data">
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label">Nombre del Producto</label>
+              <p class="control is-expanded">
+                <input class="input" type="text" placeholder="Tennis" formControlName="name">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Precio del Producto</label>
+              <p class="control is-expanded">
+                <input class="input" type="number" placeholder="0.00" formControlName="price">
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label">Categoría del Producto</label>
+              <div class="control">
+                <div class="select">
+                  <select formControlName="category">
+                    <option value="">Selecciona una categoría</option>
+                    <option
+                      *ngFor="let category of categories"
+                      [value]="category?._id"
+                    >
+                      {{category?.name}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Marca del Producto</label>
+              <p class="control is-expanded">
+                <input class="input" type="text" placeholder="Hey! Open" formControlName="brand">
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label">Imagen Principal del Producto</label>
+              <div class="file has-name">
+                <label class="file-label">
+                  <input
+                    class="file-input"
+                    type="file"
+                    accept="image/*"
+                    (change)="onImageUpload($event)"
+                  >
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <span class="material-symbols-outlined">
+                        publish
+                      </span>
+                    </span>
+                    <span class="file-label">
+                      Selecciona una imagen
+                    </span>
+                  </span>
+                  <span class="file-name">
+                    {{fileName}}
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label">Cantidad de Inventario</label>
+              <p class="control is-expanded">
+                <input class="input" type="number" placeholder="0" max="999" formControlName="stock">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Es producto destacado</label>
+              <div class="control">
+                <div class="select">
+                  <select formControlName="isFeatured">
+                    <option [value]="true">Si</option>
+                    <option [value]="false">No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label">Descripción corta</label>
+              <p class="control is-expanded">
+                <input class="input" type="text" formControlName="description">
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label class="label">Descripción Larga</label>
+              <p class="control is-expanded">
+                <textarea class="textarea" formControlName="richDescription"></textarea>
+              </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-black" (click)="handleCategorySubmit()">Save changes</button>
+      <button class="button is-warning is-light" (click)="closeProductModal()">Cancel</button>
+    </footer>
+  </div>
+</div>

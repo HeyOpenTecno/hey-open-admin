@@ -1,0 +1,58 @@
+@import 'colors.scss';
+
+.login-container {
+  background-image: url('../../../assets/login-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .login-data {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .logo {
+      margin-bottom: 30px;
+    }
+    .login-form  {
+      padding: 0 2rem;
+      width: 100%;
+      .field {
+        .label {
+          font-weight: 500;
+          font-family: 'Quicksand', sans-serif;
+          color: $white-neutal;
+        }
+      }
+      .form-options {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        .checkbox {
+          color: $white-neutal;
+        }
+        span {
+          text-align: right;
+          font-size: 14px;
+          color: $white-neutal;
+        }
+      }
+      .button  {
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 0 3rem;
+      }
+    }
+  }
+}

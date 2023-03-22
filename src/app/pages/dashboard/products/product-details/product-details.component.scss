@@ -1,0 +1,35 @@
+@import 'screen-sizes';
+@import 'colors';
+
+.modal-card {
+  width: 95%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  .modal-card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    ul, article {
+      width: 100%;
+    }
+    .list-group-item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-left: 1px solid #adb5bd;
+      border-right: 1px solid #adb5bd;
+      border-top: 1px solid #adb5bd;
+      padding: .5rem;
+    }
+
+    .list-group-item:first-of-type {
+        border-radius: .5rem .5rem 0 0;
+    }
+
+    .list-group-item:last-of-type {
+        border-radius: 0 0 .5rem .5rem ;
+        border-bottom: 1px solid #adb5bd;
+    }
+  }
+}

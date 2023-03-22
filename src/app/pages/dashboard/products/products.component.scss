@@ -1,0 +1,31 @@
+@import 'colors';
+@import 'screen-sizes';
+
+.products-container {
+  margin-top: 1rem;
+  background-color: $white-neutal;
+  padding: 1rem;
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  height: calc(100vh - 7rem);
+  max-height: calc(100vh - 7rem);
+  overflow: auto;
+  .products-data-container {
+    width: 100%;
+    .adding-data {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .not-list {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img {
+        width: 7rem;
+      }
+    }
+  }
+}
