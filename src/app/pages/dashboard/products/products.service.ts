@@ -15,7 +15,7 @@ export class ProductsService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': token
       })
     };
     const path = `${environment.GET_PRODUCT_URL}`.replace(
@@ -31,7 +31,7 @@ export class ProductsService {
     const token = window.localStorage.getItem('token');
     const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${token}`
+        'Authorization': token
       })
     };
     const path = `${environment.GET_PRODUCTS_URL}`;

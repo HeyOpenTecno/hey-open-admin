@@ -32,7 +32,7 @@ export class CategoriesService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': token
       })
     };
     const path = `${environment.POST_CATERGORIES_URL}`;
@@ -46,7 +46,7 @@ export class CategoriesService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': token
       })
     };
 
@@ -64,7 +64,7 @@ export class CategoriesService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': token
       })
     };
 
